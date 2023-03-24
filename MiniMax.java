@@ -204,7 +204,7 @@ public class MiniMax implements IOthelloAI {
         float tokenEval = 10 * tokenDiff * (tpr - 0.4f);
 
         // combine placementValue and tokenEval to return final score
-        return (int)(tokenEval + placementValue);
+        return (int)(tokenEval + placementValue * (1 - tpr));
     }
 
     // A private helper method that creates a copy of a given game state and makes a move on it
